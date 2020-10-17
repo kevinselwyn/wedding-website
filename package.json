@@ -1,0 +1,34 @@
+{
+  "name": "wedding-website",
+  "version": "1.0.0",
+  "description": "Kevin + Melissa's Wedding Website",
+  "main": "index.js",
+  "author": "Kevin Selwyn <kevinselwyn@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "yarn run dev:setup && yarn run dev:html && yarn run dev:img && yarn run dev:css & yarn run dev:js",
+    "dev:setup": "yarn run build:setup",
+    "dev:html": "yarn run build:html",
+    "dev:img": "yarn run build:img",
+    "dev:css": "yarn run build:css --watch",
+    "dev:js": "webpack-dev-server",
+    "build": "yarn run build:setup && yarn run build:html && yarn run build:cname && yarn run build:img && yarn run build:css && yarn run build:js",
+    "build:setup": "mkdir -p dist",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:cname": "cp src/CNAME dist/CNAME",
+    "build:img": "rsync -a src/img dist/",
+    "build:css": "node-sass --output-style compressed src/style.scss --output dist",
+    "build:js": "NODE_ENV=production webpack --mode=production"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "node-sass": "^4.14.1",
+    "reset-css": "^5.0.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
