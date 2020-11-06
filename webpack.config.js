@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const SRC_DIR = path.resolve(__dirname, './src');
 const BUILD_DIR = path.resolve(__dirname, './dist');
@@ -20,6 +21,15 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html',
+            minify: false,
+            inject: false,
+            cachebuster: Date.now()
+        })
+    ],
     devServer: {
         contentBase: './dist',
         compress: true,
