@@ -161,7 +161,7 @@ html, body {
         }
     }
 
-    &--story, &--party, &--registry {
+    &--story, &--party, &--registry, &--things-to-do {
         .section__content {
             width:50%;
             margin:0 auto;
@@ -454,6 +454,33 @@ html, body {
     }
 
     .section {
+        &--hero {
+            .section {
+                &__slide {
+                    &--01 {
+                        background-position:70% center;
+                    }
+
+                    &--03 {
+                        background-position:20% center;
+                    }
+                }
+            }
+        }
+        &__content {
+            width:auto !important;
+            padding-left:32px !important;
+            padding-right:32px !important;
+
+            h2 {
+                width:100%;
+                padding-left:0;
+                padding-right:0;
+                font-size:36px;
+                text-align:center;
+            }
+        }
+
         .party {
             img {
                 margin:20px;
