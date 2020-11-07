@@ -411,7 +411,7 @@ html, body {
         }
     }
 
-    &:hover {
+    &:hover, &.is-selected {
         p {
             &:nth-child(1) {
                 display:none;

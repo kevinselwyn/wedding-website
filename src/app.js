@@ -70,3 +70,12 @@
 
     start_slideshow();
 })());
+
+// footer
+((() => {
+    const footer = document.querySelector('.footer');
+
+    footer.addEventListener('click', () => {
+        footer.classList.add('is-selected');
+    });
+})());
