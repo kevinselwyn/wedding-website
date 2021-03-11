@@ -213,6 +213,29 @@ html, body {
         }
     }
 
+    &--covid {
+        height:auto;
+        min-height:auto;
+
+        .section__content {
+            padding:32px;
+            transform:none;
+            position:static;
+        }
+
+        b {
+            font-weight:bold;
+        }
+
+        em {
+            font-style:italic;
+        }
+
+        u {
+            text-decoration:underline;
+        }
+    }
+
     &__img {
         left:0;
         right:0;
