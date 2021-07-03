@@ -168,6 +168,14 @@ html, body {
             padding:64px 0;
             transform:none;
             position:static;
+
+            .highlight {
+                font-size:24px;
+
+                p {
+                    text-align:center;
+                }
+            }
         }
     }
 
