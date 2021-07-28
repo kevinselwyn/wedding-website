@@ -27,6 +27,34 @@
     wedding_date_content.appendChild(days_until_el);
 })());
 
+// rsvp date
+((() => {
+    const rsvp_date_content = document.querySelector('.section--faq .section__content');
+    const rsvp_date_el = rsvp_date_content.querySelector('time');
+    const rsvp_date = new Date(rsvp_date_el.innerHTML);
+    const days_until_el = document.createElement('span');
+    const days_until = Math.round((rsvp_date.getTime() - Date.now()) / (60 * 60 * 24 * 1000));
+
+    if (days_until < 0) {
+        days_until_el.innerHTML = ' (past-due!)';
+
+        return;
+    }
+
+    days_until_el.innerHTML = ((() => {
+        switch (days_until) {
+        case 0:
+            return ' (due today!)';
+        case 1:
+            return ' (due tomorrow!)'
+        default:
+            return ` (${days_until} day left!)`;
+        }
+    })());
+
+    rsvp_date_el.parentNode.appendChild(days_until_el);
+})());
+
 // carousel
 ((() => {
     const slides = [...document.querySelectorAll('.section__slide')];
